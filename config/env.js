@@ -98,6 +98,8 @@ function getClientEnvironment(publicUrl) {
       env[key] = JSON.stringify(raw[key]);
       return env;
     }, {}),
+    // custom
+    __EDIT__: process.env.RUN_ENV === 'edit',
   };
 
   return { raw, stringified };

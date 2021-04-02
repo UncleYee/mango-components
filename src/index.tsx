@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import config from './config'
 import './index.css'
 
-const { CMSComponent, testData, defaultProps } = config
+const { MangoComponent, testData, defaultProps } = config
 
 console.log(testData);
 
@@ -12,7 +12,7 @@ function App() {
   const ref = React.createRef<HTMLDivElement>()
   return (
     <div className="app">
-      <CMSComponent
+      <MangoComponent
         defaultProps={defaultProps}
         data={testData}
         ref={ref}

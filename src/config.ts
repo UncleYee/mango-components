@@ -6,13 +6,13 @@ import testData from './components/common/Video/testData.json';
 import { defaultProps } from './components/common/Video/config.yaml';
 
 interface Config {
-  CMSComponent: any; // React.ForwardRefRenderFunction<HTMLDivElement, MaskProps> //(props: MaskProps) => JSX.Element
+  MangoComponent: any; // React.ForwardRefRenderFunction<HTMLDivElement, MaskProps> //(props: MaskProps) => JSX.Element
   testData: any
   defaultProps?: any,
 }
 
 const config: Config = {
-  CMSComponent: MangoComponent,
+  MangoComponent,
   testData,
   defaultProps,
 }

@@ -1,0 +1,19 @@
+metaType: IMAGE_LIST                               # 必填 唯一值
+schemas:
+  - dataName: list                                 # 必填
+    type: Array                                    # 必填 SchemaType
+    invisible: false                               # 必填 默认是否隐藏
+    name: 图片列表                                      # 可选
+    schemas:                                       # 可选 无限嵌套
+      - dataName: src
+        type: Image
+        invisible: false
+        name: 图片地址
+      - dataName: link
+        type: Link
+        invisible: false
+        name: 跳转链接
+defaultProps:                                   # 可选 页面被渲染的初始值
+  list:
+    - src: http://www.baidu.com
+      link: http://www.baidu.com

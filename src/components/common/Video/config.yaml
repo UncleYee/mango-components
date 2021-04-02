@@ -1,0 +1,13 @@
+metaType: VIDEO                               # 必填 唯一值
+schemas:
+  - dataName: image                                 # 必填
+    type: Image                                    # 必填 SchemaType
+    invisible: false                               # 必填 默认是否隐藏
+    name: 封面图片                                      # 可选
+  - dataName: video
+    type: Video
+    invisible: false
+    name: 视频
+defaultProps:
+  image: http://www.baidu.com
+  video: http://www.baidu.com

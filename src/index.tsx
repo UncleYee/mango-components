@@ -1,8 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import config from './config'
+import './index.css'
+
+const { CMSComponent, testData, defaultProps } = config
+
+console.log(testData);
+
+function App() {
+  const ref = React.createRef<HTMLDivElement>()
+  return (
+    <div className="app">
+      <CMSComponent
+        defaultProps={defaultProps}
+        data={testData}
+        ref={ref}
+      />
+    </div>
+  );
+}
+
+document.body.appendChild(
+	Object.assign(document.createElement(`div`), { id: 'root' })
+);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,8 +31,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

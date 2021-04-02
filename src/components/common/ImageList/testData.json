@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "src": "http://www.baidu.com",
+      "link": "https://www.qq.com"
+    },
+    {
+      "src": "http://www.baidu.com",
+      "link": "https://www.baidu.com"
+    }
+  ]
+}

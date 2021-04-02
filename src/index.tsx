@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom'
 import config from './config'
 import './index.css'
 
-const { CMSComponent, testData, defaultProps } = config
+const { MangoComponent, testData, defaultProps } = config
 
 function App() {
   const ref = React.createRef<HTMLDivElement>()
   return (
     <div className="app">
-      <CMSComponent
+      <MangoComponent
         defaultProps={defaultProps}
         data={testData}
         ref={ref}
@@ -18,6 +18,10 @@ function App() {
     </div>
   );
 }
+
+document.body.appendChild(
+	Object.assign(document.createElement(`div`), { id: 'root' })
+);
 
 ReactDOM.render(
   <React.StrictMode>

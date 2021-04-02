@@ -1,16 +1,20 @@
 import React from 'react'
 import { MaskProps } from './components/base/wrapper'
 
+import MangoComponent from './components/common/Video';
+import testData from './components/common/Video/testData.json';
+import { defaultProps } from './components/common/Video/config.yaml';
+
 interface Config {
-  CMSComponent: React.ForwardRefRenderFunction<HTMLDivElement, MaskProps> //(props: MaskProps) => JSX.Element
+  MangoComponent: any; // React.ForwardRefRenderFunction<HTMLDivElement, MaskProps> //(props: MaskProps) => JSX.Element
   testData: any
   defaultProps?: any,
 }
 
 const config: Config = {
-  CMSComponent: require('./components/common/Video').default,
-  testData: require('./components/common/Video/testData'),
-  defaultProps: require('./components/common/Video/config.yaml').defaultProps,
+  MangoComponent,
+  testData,
+  defaultProps,
 }
 
 export default config

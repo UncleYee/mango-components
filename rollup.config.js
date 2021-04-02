@@ -14,7 +14,7 @@ import json from '@rollup/plugin-json';
 export default {
   input: 'src/index.tsx',
   output: {
-    file: 'dist/index.js',
+    file: 'build/index.js',
     format: 'umd',
   },
   plugins: [
@@ -68,7 +68,7 @@ export default {
     yaml(),
     serve({
       open: true,
-      contentBase: 'dist',
+      contentBase: 'build',
     }),
     livereload(),
   ]

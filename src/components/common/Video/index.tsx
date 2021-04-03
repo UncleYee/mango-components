@@ -21,7 +21,7 @@ const Video = (props: Props) => {
   // 播放视频
   const playVideo = () => {
     if (videoRef.current) {
-      toggleCover(!showCover);
+      toggleCover(false);
       videoRef.current?.play();
     }
   };
@@ -36,4 +36,4 @@ const Video = (props: Props) => {
   );
 };
 
-export default wrapper(Video, (data: any) => _.get(data, 'image') && _.get(data, 'video'))
+export default wrapper(Video, (data: any) => _.get(data, 'image') && _.get(data, 'video'));

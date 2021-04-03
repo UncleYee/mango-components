@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import config from './config'
-import './index.css'
+import config from './config';
 
-const { MangoComponent, testData, defaultProps } = config
+import './index.css';
+
+const { MangoComponent, testData, defaultProps } = config;
 
 function App() {
-  const ref = React.createRef<HTMLDivElement>()
+  const ref = React.createRef<HTMLDivElement>();
   return (
     <div className="app">
       <MangoComponent
@@ -19,13 +20,11 @@ function App() {
   );
 }
 
-document.body.appendChild(
-	Object.assign(document.createElement(`div`), { id: 'root' })
-);
+document.body.appendChild(Object.assign(document.createElement('div'), { id: 'root' }));
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

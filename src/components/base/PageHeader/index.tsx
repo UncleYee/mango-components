@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const PageHeader = () => {
-  return <div className="page-header"></div>
-}
+const PageHeader = () => (
+  <div className="page-header" />
+);
 
-export default PageHeader
+export default PageHeader;

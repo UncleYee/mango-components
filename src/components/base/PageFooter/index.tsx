@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const PageFooter = () => {
-  return <div className="page-footer"></div>
-}
+const PageFooter = () => (
+  <div className="page-footer" />
+);
 
-export default PageFooter
+export default PageFooter;

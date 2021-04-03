@@ -1,8 +1,8 @@
-import _ from 'lodash'
-import React from 'react'
-import { wrapper } from '@base'
+import _ from 'lodash';
+import React from 'react';
+import { wrapper } from '@base';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 interface Image {
   src: string,
@@ -15,14 +15,16 @@ interface Props {
 
 const ImageList = (props: Props) => {
   const jump = (link?: string) => {
-    link && (window.location.href = link)
-  }
+    if (link) {
+      window.location.href = link;
+    }
+  };
 
-  const { list } = props
+  const { list } = props;
   return (
     <div className={styles.imageList}>
       {
-        list.map(image => (
+        list.map((image) => (
           <img
             key={image.src}
             src={image.src}
@@ -32,7 +34,7 @@ const ImageList = (props: Props) => {
         ))
       }
     </div>
-  )
-}
+  );
+};
 
-export default wrapper(ImageList, (data: Props) => _.some(_.get(data, 'list'), item => item.src))
+export default wrapper(ImageList, (data: Props) => _.some(_.get(data, 'list'), (item) => item.src));

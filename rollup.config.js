@@ -1,15 +1,14 @@
 import yaml from '@rollup/plugin-yaml';
 import html from '@rollup/plugin-html';
+import json from '@rollup/plugin-json';
 import serve from 'rollup-plugin-serve';
 import babel from 'rollup-plugin-babel';
-import postcss from 'rollup-plugin-postcss'
+import postcss from 'rollup-plugin-postcss';
 import replace from '@rollup/plugin-replace';
-// import { uglify } from 'rollup-plugin-uglify';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
-import typescript from '@rollup/plugin-typescript';
-import json from '@rollup/plugin-json';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
   input: 'src/index.tsx',

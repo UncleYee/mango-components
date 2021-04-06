@@ -13,14 +13,13 @@ interface Props {
   list: Image[],
 }
 
-const ImageList = (props: Props) => {
+const ImageList: React.FC<Props> = ({ list }) => {
   const jump = (link?: string) => {
     if (link) {
       window.location.href = link;
     }
   };
 
-  const { list } = props;
   return (
     <div className={styles.imageList}>
       {

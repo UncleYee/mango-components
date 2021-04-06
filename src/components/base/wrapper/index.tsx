@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react';
 
 import styles from './index.module.scss';
 
-export interface MaskProps {
-  defaultProps: any;
-  data: any;
+export interface MaskProps<T> {
+  defaultProps: T;
+  data: T;
   ref: React.RefObject<HTMLDivElement>;
 }
 
@@ -13,11 +13,11 @@ export interface MaskProps {
  * @param checkData 校验组件生效所必须的 props 是否有实际值
  * @returns 组件
  */
-export function wrapper(
-  WrappedComponent: (props: any) => JSX.Element,
-  shouldUseData: (data: any) => boolean,
+export function wrapper<T = any>(
+  WrappedComponent: React.FC<T>,
+  shouldUseData: (data: T) => boolean,
 ) {
-  return forwardRef<HTMLDivElement, MaskProps>((props, ref) => {
+  return forwardRef<HTMLDivElement, MaskProps<T>>((props, ref) => {
     const {
       defaultProps, // default props
       data, // 实际数据

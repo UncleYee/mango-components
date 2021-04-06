@@ -11,8 +11,7 @@ export interface Props {
   video: string;
 }
 
-const Video = (props: Props) => {
-  const { image, video } = props;
+const Video: React.FC<Props> = ({ image, video }) => {
   const [showCover, toggleCover] = useState(true);
 
   // videoRef
@@ -36,4 +35,7 @@ const Video = (props: Props) => {
   );
 };
 
-export default wrapper(Video, (data: any) => _.get(data, 'image') && _.get(data, 'video'));
+export default wrapper(
+  Video,
+  (data: Props) => _.get(data, 'image') !== undefined && _.get(data, 'video') !== undefined,
+);

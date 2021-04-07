@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageHeader = () => (
+const PageHeader: React.FC = () => (
   <div className="page-header" />
 );
 

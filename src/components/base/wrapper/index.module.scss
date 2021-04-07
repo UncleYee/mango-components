@@ -1,16 +1,3 @@
 .wrapper {
   position: relative;
 }
-
-.mask {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.selected {
-  outline: 2PX solid #1890ff!important;
-}

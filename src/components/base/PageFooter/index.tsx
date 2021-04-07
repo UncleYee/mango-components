@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageFooter = () => (
+const PageFooter: React.FC = () => (
   <div className="page-footer" />
 );
 

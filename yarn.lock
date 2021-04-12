@@ -937,14 +937,6 @@
     "@rollup/pluginutils" "^3.1.0"
     magic-string "^0.25.7"
 
-"@rollup/plugin-typescript@^8.2.1":
-  version "8.2.1"
-  resolved "https://registry.npm.taobao.org/@rollup/plugin-typescript/download/@rollup/plugin-typescript-8.2.1.tgz#f1a32d4030cc83432ce36a80a922280f0f0b5d44"
-  integrity sha1-8aMtQDDMg0Ms42qAqSIoDw8LXUQ=
-  dependencies:
-    "@rollup/pluginutils" "^3.1.0"
-    resolve "^1.17.0"
-
 "@rollup/plugin-yaml@^3.0.0":
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/@rollup/plugin-yaml/download/@rollup/plugin-yaml-3.0.0.tgz#632af397a6faaea10c885680c575ae01f4556c1d"
@@ -4763,6 +4755,11 @@ react-dom@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-intersection-observer@^8.31.0:
+  version "8.31.0"
+  resolved "https://registry.npm.taobao.org/react-intersection-observer/download/react-intersection-observer-8.31.0.tgz#0ed21aaf93c4c0475b22b0ccaba6169076d01605"
+  integrity sha1-DtIar5PEwEdbIrDMq6YWkHbQFgU=
 
 react-is@^16.8.1:
   version "16.13.1"

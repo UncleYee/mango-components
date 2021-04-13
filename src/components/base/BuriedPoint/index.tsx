@@ -3,8 +3,12 @@ import React, { useEffect, useRef } from 'react';
 import { get } from 'lodash';
 import { useInView } from 'react-intersection-observer';
 
-// 曝光事件的无痕埋点
-export const ExposureBuriedPoint: React.FC = ({ children }) => {
+interface Props {
+  children: (ref: any) => JSX.Element;
+}
+
+// Expose Buried Point
+export const ExposureBuriedPoint: React.FC<Props> = ({ children }) => {
   const isExposed = useRef(false);
 
   const { ref, inView } = useInView({
@@ -24,20 +28,21 @@ export const ExposureBuriedPoint: React.FC = ({ children }) => {
     }
   }, [inView]);
 
-  return (
-    <>
-      <div style={{ width: 0, height: 0 }} ref={ref} />
-      {children}
-    </>
-  );
+  if (typeof children !== 'function') {
+    return (
+      <div>埋点错误</div>
+    );
+  }
+
+  return children(ref);
 };
 
-// 空函数
+// noop
 function noop() {
   // DO NOTHING
 }
 
-// 点击事件的无痕埋点
+// Click Buried Point
 export const ClickBuriedPoint: React.FC = ({ children }) => {
   // 点击上报事件
   const handleClick = () => {

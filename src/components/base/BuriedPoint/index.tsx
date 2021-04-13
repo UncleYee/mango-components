@@ -4,12 +4,13 @@ import { get } from 'lodash';
 import { useInView } from 'react-intersection-observer';
 
 interface Props {
+  uniqueKey: string;
   children: (ref: any) => JSX.Element;
 }
 
 // Expose Buried Point
-export const ExposureBuriedPoint: React.FC<Props> = ({ children }) => {
-  const isExposed = useRef(false);
+export const ExposureBuriedPoint: React.FC<Props> = ({ children, uniqueKey }) => {
+  const exposedKey = useRef<string>();
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -21,12 +22,11 @@ export const ExposureBuriedPoint: React.FC<Props> = ({ children }) => {
   };
 
   useEffect(() => {
-    // 只在第一次曝光的时候上报
-    if (inView && !isExposed.current) {
-      isExposed.current = true;
+    if (inView && exposedKey.current !== uniqueKey) {
+      exposedKey.current = uniqueKey;
       onExpose();
     }
-  }, [inView]);
+  }, [inView, uniqueKey]);
 
   if (typeof children !== 'function') {
     return (

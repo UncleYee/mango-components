@@ -37,11 +37,6 @@ export const ExposureBuriedPoint: React.FC<Props> = ({ children, uniqueKey }) =>
   return children(ref);
 };
 
-// noop
-function noop() {
-  // DO NOTHING
-}
-
 // Click Buried Point
 export const ClickBuriedPoint: React.FC = ({ children }) => {
   // 点击上报事件
@@ -54,7 +49,7 @@ export const ClickBuriedPoint: React.FC = ({ children }) => {
   const addClickEvent = (ele: any) => (
     React.cloneElement(ele, {
       onClick: (e: any) => {
-        const originClick = ele.props.onClick || noop;
+        const originClick = ele.props.onClick;
         originClick.call(ele, e);
         handleClick();
       },

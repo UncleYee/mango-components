@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react';
 
+import ErrorBoundary from '../ErrorBoundary';
+
 import styles from './index.module.scss';
 
 export interface MaskProps<T> {
@@ -31,12 +33,20 @@ export function wrapper<T = any>(
     // 生产环境
     if (!__EDIT__) {
       // 没有数据，则不渲染
-      return (useData ? <WrappedComponent {...actualProps} /> : null);
+      return (
+        useData ? (
+          <ErrorBoundary>
+            <WrappedComponent {...actualProps} />
+          </ErrorBoundary>
+        ) : null
+      );
     }
 
     return (
       <div className={styles.wrapper} ref={ref}>
-        <WrappedComponent {...actualProps} />
+        <ErrorBoundary>
+          <WrappedComponent {...actualProps} />
+        </ErrorBoundary>
       </div>
     );
   });

@@ -30,7 +30,7 @@ export default {
     }),
     postcss({
       autoModules: true,
-      extensions: ['.css', '.scss'],
+      extensions: ['.css', '.less'],
       plugins: [
         require('postcss-flexbugs-fixes'),
         require('postcss-preset-env')({

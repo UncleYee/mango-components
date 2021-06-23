@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import { wrapper } from '@base';
 
-import styles from './index.module.scss';
+import styles from './index.module.less';
 
 interface Image {
   src: string,
@@ -21,7 +21,7 @@ const ImageList: React.FC<Props> = ({ list }) => {
   };
 
   return (
-    <div className={styles.imageList}>
+    <div className={styles['image-list']}>
       {
         list.map((image) => (
           <img

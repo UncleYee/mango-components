@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import { wrapper } from '@base';
 
-import styles from './index.module.scss';
+import styles from './index.module.less';
 
 export interface Props {
   image: string;

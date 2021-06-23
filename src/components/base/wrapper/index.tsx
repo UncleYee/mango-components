@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import ErrorBoundary from '../ErrorBoundary';
 
-import styles from './index.module.scss';
+import styles from './index.module.less';
 
 export interface MaskProps<T> {
   defaultProps: T;

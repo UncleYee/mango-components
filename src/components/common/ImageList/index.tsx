@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import { wrapper } from '@base';
 
-import styles from './index.module.less';
+import styles from './index.module.scss';
 
 interface Image {
   src: string,
